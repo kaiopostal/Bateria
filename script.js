@@ -32,8 +32,21 @@ function playSound(sound){
 }
 
 
+//Pega oque foi digitado e toca uma musica
+
 function playComposition(songArray){
+
+    let wait = 0; //Variavel para armazenar tempo de espera da composição
+
+
     for(let songItem of songArray){
-        playSound(`key${songItem}`);
+
+        setTimeout(() =>{
+            playSound(`key${songItem}`);
+
+        }, wait);
+        wait+= 250; //Aumenta 250Milissegundos para cada tecla digitada 
+
+        
     }
 }
